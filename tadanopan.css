@@ -1,0 +1,173 @@
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Hiragino Kaku Gothic ProN W3', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.top-wrapper{
+  text-align:center;
+  color:black;
+  background-image:url("https://assets.vg247.com/current//2018/01/fortnite_battle_royale.jpg");
+  background-color:rgba(255,255,255,0.5);
+  background-blend-mode:lighten;
+  background-size:cover;
+  padding:180px 0 100px 0;
+}
+
+.container{
+    width:100%;
+    margin:0 auto;
+}
+
+.lets-game{
+    opacity:0.6;
+}
+.lets-game h1{ 
+    font-size:60px;
+    letter-spacing:5px;
+    font-family:'Impact';
+    
+}
+
+.lets-game p{
+    font-size:20px;
+
+}
+
+.btn-wrapper{
+   margin:20px 0; 
+}
+
+.btn-wrapper p{
+    padding:10px 0;
+}
+
+.btn{
+    color:white;
+    display:inline-block;
+    padding:8px 24px;
+    opacity:0.8;
+    border-radius:4px;
+
+}
+.btn:hover{
+    opacity:1;
+}
+
+.signup{
+    background-color:#239b76;
+}
+.fa{
+    margin-right:5px;
+}
+.twitter{
+    background-color:#55acee;
+}
+
+header{
+    height:65px;
+    background-color:rgba(34,49,52,0.9);
+    width:100%;
+    position:fixed;
+    z-index:10;
+    top:0;
+}
+
+.header-left {
+    margin-top:20px;
+    width:150px;
+    font-size:15px;
+    font-family:'Hiragino Kaku Gothic ProN W3', sans-serif;
+    float:left;
+    transition:all 0.5s;
+}
+
+.header-left:hover{
+    background-color:rgba(255,255,255,0.5);
+}
+
+.header-left a{
+    color:white;
+}
+
+.lesson-wrapper{
+    background-color:#f7f7f7;
+    padding-top:80px;
+    height:580px;
+    text-align:center;
+}
+
+.heading{
+    padding-bottom:50px;
+    color:#5f5d60;
+}
+
+.heading h2{
+    font-weight:normal;
+}
+
+.lessons{
+    width:33%;
+    float:left;
+}
+
+.lesson-icon{
+    position:relative;
+}
+
+.lesson-icon p{
+    position:absolute;
+    top:90px;
+    width:100%;
+    color:white;
+}
+
+.lesson-text{
+    width:60%;
+    font-size:13px;
+    padding-top:15px;
+    display:inline-block;
+    color:#b3aeb5;
+ 
+}
+
+.contact-form{
+    padding-top:100px;
+    text-align:center;
+}
+
+
+
+.contact-form h4{
+    font-size:28px;
+    border-bottom:2px solid #dee7ec;
+    padding-bottom:15px;
+    margin-bottom:50px;
+}
+
+input{
+    padding:20px;
+    margin-top:10px;
+    margin-bottom:30px;
+    width:50%;
+}
+
+.contact-submit{
+    font-size:18px;
+    background-color:#dee7ec;
+    color:#889eab;
+    width:50%;
+}
