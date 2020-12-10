@@ -40,13 +40,15 @@ if(!empty($_POST)){
 <head>
 <title></title>
 <meta http-equiv="Content-Type" content = "text/html charset=UTF-8">
+<link rel="stylesheet" href="style4.css" type="text/css">
 </head>
 <body>
     <h1>本登録画面</h1>
     <form method="POST" action = "">
-    <input type="text" name="title" placeholder="タイトル"/><br>
-    <input type="text" name="date" placeholder="発売日"/><br>
-    <select name = "stock">
+    <input type="text" class="title" name="title" placeholder="タイトル"/><br>
+    <input type="text" class="date" name="date" placeholder="発売日"/><br>
+    <div class="stock1">在庫数</div>
+    <select class="stock" name = "stock">
         <?php for($i=1;$i<=50;$i++){?>
         <option value="" style="display:none;">選択してください</option>
         <option value ="<?php echo $i;?>">
@@ -54,4 +56,4 @@ if(!empty($_POST)){
         </option>
         <?php } ?>
     </select><br>
-    <input type = "submit" value="登録"/>
+    <input type = "submit" class="submit" value="登録"/>

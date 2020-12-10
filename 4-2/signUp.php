@@ -37,13 +37,14 @@ if(!empty($_POST)){
 <head>
 <title></title>
 <meta http-equiv="Content-Type" content="text/html charset=UTF-8">
+<link rel="stylesheet" href="style2.css" type="text/css">
 </head>
 <body>
     <h1>ユーザー登録画面</h1>
     <form action="" method="post">
-        <input type = "text" name="name" placeholder="ユーザ名"/><br>
-        <input type = "password" name = "password" placeholder="パスワード"/><br>
-        <input type = "submit" value="新規登録"/>
+        <input type = "text" class="name" name="name" placeholder="ユーザ名"/><br>
+        <input type = "password" class="password" name = "password" placeholder="パスワード"/><br>
+        <input type = "submit" class="login" value="新規登録"/>
     </form>
 </body>
 </html> 

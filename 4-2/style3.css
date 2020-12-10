@@ -1,0 +1,52 @@
+.book{
+    background-color:#0033FF;
+    padding:10px 10px;
+    color:white;
+    border-radius:3px;
+    font-size:13px;
+    margin-right:8px;
+
+}
+
+.logout{
+    padding:10px 10px;
+    color:white;
+    border-radius:3px;
+    font-size:13px;
+    background-color:#808080;
+}
+
+table{
+    margin-top:20px;
+    text-align:center;
+    border:solid 1px;
+    border-collapse: collapse;
+    border-color:#808080;
+    
+}
+
+td{
+    padding:20px 50px;
+}
+
+tr{
+    border:solid 1px;
+    border-color:#808080;
+}
+
+td{
+    border:solid 1px;
+    border-color:#808080;
+}
+
+.tr{
+    background-color:#C0C0C0;
+}
+
+.delete{
+    color:white;
+    background-color:#FF0000;
+    padding:12px;
+    border-radius:3px;
+
+}

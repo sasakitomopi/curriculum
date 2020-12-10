@@ -46,15 +46,18 @@ if(!empty($_POST)){
 <head>
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="style1.css" type="text/css">
 </head>
 
 <body>
+    <div class="header">
     <h1>ログイン画面</h1>
     <a href="signUp.php">新規ユーザ登録</a>
+</div>
     <form method="post" action="">
-    <input type = "text" name="name" placeholder="ユーザー名"/><br>
-    <input type = "password" name="password" placeholder="パスワード"/><br>
-    <input type = "submit" value="ログイン"/>
+    <input type = "text" name="name" class="name" placeholder="ユーザー名"/><br>
+    <input type = "password" name="password" class="password" placeholder="パスワード"/><br>
+    <input type = "submit" value="ログイン" class="login"/>
     </form>
 </body>
 
