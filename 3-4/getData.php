@@ -30,6 +30,7 @@ class getData{
      * @return array $post_data 記事情報
      */
     public function getPostData(){
+        //SELECT * FROM posts ORDER BY id descが$stmtまでの部分
         $getposts_sql = "SELECT * FROM posts ORDER BY id desc";
         $post_data = $this->pdo->query($getposts_sql);
         return $post_data;

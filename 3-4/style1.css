@@ -1,0 +1,68 @@
+.clearfix::after { 
+    content: '';
+    display: block; 
+    clear: both;
+}
+    
+header{
+    width:1000px;
+    
+}
+
+.header-left{
+   float:left;
+}
+.header-right{
+    width:800px;
+    float:right;
+    
+}
+
+img{
+    width:200px;
+    height:120px;
+    background-color:#add8e6;
+}
+
+
+
+.header-right-top{
+    background-color:#87ceeb;
+    height:60px;
+}
+
+.header-right-bottom{
+    background-color:#00ffff;
+    height:60px;
+}
+
+table{
+    border:1px solid;
+    border-collapse: collapse;
+    margin:0 auto;
+}
+
+.contents{
+    background-color:#87ceeb;
+}
+
+.contents1{
+    background-color:#e0ffff;
+}
+
+
+td{
+    border:1px solid;
+    border-collapse: collapse;
+}
+
+footer{
+    background-color:#00ced1;
+    height:50px;
+    margin:0 auto;
+}
+
+
+
+
+

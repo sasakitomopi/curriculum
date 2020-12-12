@@ -11,10 +11,12 @@ $answer1='80';
 $answer2="PHP";
 $answer3="join";
 ?>
+<form method="post" action="answer.php">
 <p>お疲れ様です <?php echo $name?>さん</p>
 <!--フォームの作成 通信はPOST通信で-->
 <h2>①ネットワークのポート番号は何番？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
+<!--foreachは配列で送っているものではない 一個一個取り出している-->
 <?php foreach($number as $numbers):?>
 <input type="radio" name="number" value="<?php echo $numbers; ?>"/><?php echo $numbers;?>
 <?php endforeach;?>
@@ -31,14 +33,11 @@ $answer3="join";
 <?php endforeach;?>
 
 <!--問題の正解の変数と名前の変数を[answer.php]に送る-->
-<form method="post" action="answer.php">
+
     <input type="hidden" name="name" value="<?php echo $name; ?>"/>
-    <input type="hidden" name="language" value="<?php echo  $languages ?>"/>
-    <input type="hidden" name="command" value="<?php echo  $commands ?>"/>
-    <input type="hidden" name="number" value="<?php echo  $numbers ?>"/>
     <input type="hidden" name="answer1" value="<?php echo  $answer1 ?>"/>
     <input type="hidden" name="answer2" value="<?php echo  $answer2 ?>"/>
-    <input type="hidden" name="answer3" value="<?php echo  $answer3 ?>"/>
+    <input type="hidden" name="answer3" value="<?php echo  $answer3 ?>"/><br>
     <input type="submit" value="回答する"/>
 
 </form>
