@@ -20,22 +20,15 @@ echo '<br>';
 <?php
 date_default_timezone_set('Asaia/Tokyo');
 
-$date = date("h時台です",time());
-echo'<br>';
-echo $date;
- echo'<br>';
+$time = intval(date('H'));
 
-
+echo $time.'時台です';
 echo '<br>';
-
-if($date(range(6,12))){
-    echo 'おはようございます';
-}else if($date(range(13,18))){
-    echo 'こんにちは';
+if(4<=$time && $time <= 12){
+    echo 'おはようございます。';
+}else if(12<=$time && $time <=18){
+    echo 'こんにちは。';
 }else{
-    echo 'こんばんわ';
+    echo 'こんばんは。';
 }
-
-
-
 ?>
