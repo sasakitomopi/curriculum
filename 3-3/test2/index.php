@@ -1,13 +1,5 @@
 <?php
 require_once('dbconnect.php');
-db_connect();
-// セッション開始
-session_start();
-include_once("dbInfo.php");
-
-// エラーメッセージ、登録完了メッセージの初期化
-$errorMessage = "";
-$signUpMessage = "";
 
 // セッション開始
 session_start();
@@ -16,39 +8,33 @@ session_start();
 if (isset($_POST["signUp"])) {
     // 1. ユーザIDの入力チェック
     if (empty($_POST)) {  // 値が空のとき
-        $errorMessage = 'ユーザーIDが未入力です。';
+        echo 'ユーザーIDが未入力です。';
     } else if (empty($_POST["password"])) {
-        $errorMessage = 'パスワードが未入力です。';
+        echo 'パスワードが未入力です。';
     } else if (empty($_POST["password2"])) {
-        $errorMessage = 'パスワードが未入力です。';
+        echo 'パスワードが未入力です。';
     }
 
-    if (!empty($_POST["username"]) && !empty($_POST["password"]) && !empty($_POST["password2"]) && $_POST["password"] === $_POST["password2"]) {
+    if (!empty($_POST["name"]) && !empty($_POST["password"]) && !empty($_POST["password2"]) && $_POST["password"] === $_POST["password2"]) {
         // 入力したユーザIDとパスワードを格納
-        $username = $_POST["username"];
+        $name = $_POST["name"];
         $password = $_POST["password"];
-
-        // 2. ユーザIDとパスワードが入力されていたら認証する
-        $dsn = sprintf('mysql: host=%s; dbname=%s; charset=utf8', $db['host'], $db['dbname']);
+        $pdo = db_connect();
 
         // 3. エラー処理
         try {
-            $pdo = new PDO($dsn, $db['user'], $db['pass'], array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-
-            $stmt = $pdo->prepare("INSERT INTO userData(name, password) VALUES (?, ?)");
-
-            $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));  // パスワードのハッシュ化を行う（今回は文字列のみなのでbindValue(変数の内容が変わらない)を使用せず、直接excuteに渡しても問題ない）
-            $userid = $pdo->lastinsertid();  // 登録した(DB側でauto_incrementした)IDを$useridに入れる
-
-            $signUpMessage = '登録が完了しました。あなたの登録IDは ' . $userid . ' です。パスワードは ' . $password . ' です。';  // ログイン時に使用するIDとパスワード
-        } catch (PDOException $e) {
-            $errorMessage = 'データベースエラー';
-            // $e->getMessage() でエラー内容を参照可能（デバック時のみ表示）
-            // echo $e->getMessage();
+           $sql = "INSERT INTO users(name,password)VALUES(:name,:password)";
+           $stmt=$pdo->prepare($sql);
+           $stmt->bindParam(':name',$name);
+           $stmt->bindParam(':password',$password);
+           $stmt->execute();
+           echo '登録が完了しました';
+        }catch (PDOException $e){
+            echo 'データベースエラー';
         }
-    } else if ($_POST["password"] != $_POST["password2"]) {
-        $errorMessage = 'パスワードに誤りがあります。';
-    }
+
+    } 
+    
 }
 ?>
 
@@ -65,7 +51,7 @@ if (isset($_POST["signUp"])) {
                 <legend>新規登録フォーム</legend>
                 <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
                 <div><font color="#0000ff"><?php echo htmlspecialchars($signUpMessage, ENT_QUOTES); ?></font></div>
-                <label for="username">ユーザー名</label><input type="text" id="username" name="username" placeholder="ユーザー名を入力" value="<?php if (!empty($_POST["username"])) {
+                <label for="username">ユーザー名</label><input type="text" id="name" name="name" placeholder="ユーザー名を入力" value="<?php if (!empty($_POST["username"])) {
     echo htmlspecialchars($_POST["username"], ENT_QUOTES);
 } ?>">
                 <br>
