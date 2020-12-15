@@ -53,7 +53,6 @@
         <tr class="contents1">
             <td><?php echo $row['id'];?></td>
             <td><?php echo $row['title'];?></td>
-            <td><?php echo $row['created'];?></td>
             <td><?php 
                 if($row['category_no']==1){
                  echo '食事';
@@ -62,6 +61,7 @@
                 }else{
                 echo 'その他';}?></td>
             <td><?php echo $row['comment'];?></td>
+            <td><?php echo $row['created'];?></td>
         </tr>
         <?php } ?>
     </table>

@@ -9,7 +9,7 @@ $command=['join','select','insert','update'];
 //② ①で作成した、配列から正解の選択肢の変数を作成してください
 $answer1='80';
 $answer2="PHP";
-$answer3="join";
+$answer3="select";
 ?>
 <form method="post" action="answer.php">
 <p>お疲れ様です <?php echo $name?>さん</p>
@@ -23,7 +23,7 @@ $answer3="join";
 <h2>②Webページを作成するための言語は？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
 <?php foreach($language as $languages):?>
-<input type="radio" name="language" value="<?php echo $laguages; ?>"/><?php echo $languages;?>
+<input type="radio" name="language" value="<?php echo $languages; ?>"/><?php echo $languages;?>
 <?php endforeach;?>
 
 <h2>③MySQLで情報を取得するためのコマンドは？</h2>
